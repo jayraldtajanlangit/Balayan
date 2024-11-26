@@ -1,0 +1,162 @@
+<div class="bg-cover bg-center min-h-screen relative">
+  <!-- Background Image of the Current Slide -->
+  <div
+    class="absolute inset-0 w-full h-screen bg-no-repeat bg-cover bg-center duration-700"
+    [style.backgroundImage]="'url(' + images[currentIndex] + ')'"
+    style="position: absolute; z-index: 1;"
+  ></div>
+
+  <!-- Balayan Logo -->
+  <div class="relative flex justify-center sm:justify-start items-center w-full">
+    <img src="assets/Balayan-logo.png"
+         class="w-40 h-auto pt-10 z-50  sm:pl-10 sm:pt-10"
+         alt="Balayan Logo">
+</div>
+
+
+
+
+
+  <!-- Slide Content with Responsive Layout -->
+  <div class="absolute inset-0 flex flex-col justify-center text-white text-center px-4 z-40 ">
+    <!-- Slide 1: Logo -->
+    <div *ngIf="currentIndex === 0" class="flex flex-col items-center mt-36 mb-44 z-40 sm:mt-24 ">
+      <img
+      src="assets/Balayan-logo.png"
+      alt="First Slide Image"
+      class="w-auto h-16 sm:h-32 sm:flex sm:items-center"
+    />
+
+    </div>
+
+    <!-- Slide 2: Flavors -->
+    <div *ngIf="currentIndex === 1" class="flex flex-col text-justify items-end mb-36  mr-44 relative z-30">
+      <div class="hidden md:block">
+        <h1 class="font-bold font-maragsa text-6xl">Flavors That Embrace</h1>
+        <p class="text-base font-extralight mt-4 sm:items-end">
+          Come for the flavor, stay for the warmth. Whether you're in need of
+          a <br> quick snack or seeking a true cultural experience, we're here to offer <br>
+          you the best of the Philippines—straight from the heart.
+        </p>
+        <p class="text-sm mt-4 font-extralight italic sm:text-center mr-28">
+          <b>Taho Espesyal,</b> silken tofu, arnibal (brown sugar syrup), and tapioca pearls.
+        </p>
+        <app-buttons class="relative z-60 mt-3"></app-buttons>
+      </div>
+
+      <!--mobile View--->
+      <div class=" md:hidden">
+        <h1 class="font-bold text-2xl  sm: mr-16">Flavors That Embrace</h1>
+        <p class="text-xs font-extralight mt-4 sm:items-end">
+          Come for the flavor, stay for the warmth. Whether you're in need of
+          a  quick snack or seeking a true cultural experience, we're here to offer
+          you the best of the Philippines—straight from the heart.
+        </p>
+        <p class="text-xs mt-4 font-metropolis italic sm:text-center mr-12">
+          <b>Taho Espesyal,</b> silken tofu, arnibal (brown sugar syrup), and tapioca pearls.
+        </p>
+        <app-buttons class="relative z-60 mt-3"></app-buttons>
+      </div>
+    </div>
+
+
+    <!-- Slide 3: Local Pride -->
+    <div *ngIf="currentIndex === 2" class="flex flex-col  items-end text-justify mb-32 mr-64 relative z-20">
+      <div class="hidden md:block">
+        <h1 class="font-bold text-3xl md:text-6xl font-maragsa mb-4 mr-6">Built on Local Pride</h1>
+        <p class="font-sm font-extralight">
+          Every detail at Balayan reflects the passion and craftsmanship <br>of local artisans, proudly showcasing the talent, culture, and <br>stories of our local communities with every visit.
+        </p>
+        <p class="font-xs mt-4 font-extralight italic mr-6">
+          <b>Rattan Baskets,</b> crafted by artisans from Bukag sa Tuburan <br>
+           of Tuburan, Cebu, Philippines.
+        </p>
+        <app-buttons class="relative z-60"></app-buttons>
+      </div>
+      <!--mobile View--->
+      <div class="md:hidden">
+        <h1 class="font-bold text-3xl md:text-6xl font-maragsa mb-4 mr-6">Built on Local Pride</h1>
+        <p class="font-sm font-extralight">
+          Every detail at Balayan reflects the passion and craftsmanship <br>of local artisans, proudly showcasing the talent, culture, and <br>stories of our local communities with every visit.
+        </p>
+        <p class="font-sm mt-4 font-metropolis italic mr-6">
+          <b>Rattan Baskets,</b> crafted by artisans from Bukag sa Tuburan <br>
+           of Tuburan, Cebu, Philippines.
+        </p>
+        <app-buttons class="relative z-60"></app-buttons>
+      </div>
+
+    </div>
+
+    <!-- Slide 4: Opening Hours -->
+    <div
+    *ngIf="currentIndex === 3"
+    class="flex flex-col items-end text-justify mb-36 mt-3 pr-20 mr-80 p-6 text-sm   relative z-10"
+  >
+  <div class="hidden md:block">
+    <h1
+      class="font-bold font-maragsa text-6xl"
+    >
+      Opening Hours
+    </h1>
+    <p
+      class="text-base sm:text-base mt-2 font-extralight sm:mr-8"
+    >
+      Mactan Cebu International Airport, Lapu-Lapu City <br>
+      <b>8:00am - 9:30pm | </b>Mondays to Fridays<br>
+      <b>8:00am - 11:30pm | </b>Saturdays to Sundays
+    </p>
+    <app-buttons class="mt-4"></app-buttons>
+  </div>
+      <!--mobile View--->
+<div class="md:hidden">
+    <h1
+      class="font-bold text-2xl sm:text-3xl font-maragsa mb-2 sm:mr-40"
+    >
+      Opening Hours
+    </h1>
+    <p
+      class="text-sm sm:text-base mt-2 font-metropolis sm:mr-8"
+    >
+      Mactan Cebu International Airport, Lapu-Lapu City <br>
+      <b>8:00am - 9:30pm | </b>Mondays to Fridays<br>
+      <b>8:00am - 11:30pm | </b>Saturdays to Sundays
+    </p>
+    <app-buttons></app-buttons>
+</div>
+  </div>
+
+
+  <app-menubar></app-menubar>
+
+  <!-- Navigation Controls -->
+  <div class="flex justify-between items-center h-full absolute inset-0 z-50">
+    <!-- Left Arrow -->
+    <img
+      src="assets/Arrow Button Left.png"
+      class="h-24 md:h-48 cursor-pointer ml-2 md:ml-10"
+      alt="Previous"
+      (click)="prevSlide()"
+    >
+    <!-- Right Arrow -->
+    <img
+      src="assets/Arrow Button Right.png"
+      class="h-24 md:h-48 cursor-pointer mr-2 md:mr-10"
+      alt="Next"
+      (click)="nextSlide()"
+    >
+  </div>
+
+  <!-- Dots Navigation -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4 z-50">
+    <div
+      *ngFor="let image of images; let i = index"
+      class="w-4 h-4 rotate-45 cursor-pointer transition-all duration-300"
+      [ngStyle]="{
+        'background-color': currentIndex === i ? '#4E381C' : 'rgba(255, 255, 255, 0.5)',
+        'border': '2px solid white'
+      }"
+      (click)="currentIndex = i"
+    ></div>
+  </div>
+</div>
